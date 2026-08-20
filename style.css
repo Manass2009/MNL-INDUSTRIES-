@@ -1,0 +1,60 @@
+/* --- SECTION MACHINES --- */
+.machines-section {
+    padding: 100px 50px;
+    background-color: var(--bg-dark);
+    text-align: center;
+}
+
+.machines-section h2 {
+    font-family: var(--font-logo);
+    color: var(--primary-gold);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    margin-bottom: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.machine-card {
+    background-color: var(--surface-dark);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 20px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.machine-card:hover {
+    border-color: var(--primary-gold);
+    transform: translateY(-5px);
+}
+
+.machine-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.machine-card h3 {
+    font-family: var(--font-logo);
+    color: var(--primary-gold);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.machine-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
