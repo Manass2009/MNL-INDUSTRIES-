@@ -3,166 +3,651 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MNL INDUSTRIES — Futuristic Engineering</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body oncontextmenu="return false;">
 
-    <!-- NAVIGATION HAUT-TECH -->
-    <header class="mnl-header">
-        <div class="logo-container">
-            <span class="mnl-logo">M</span> <span class="mnl-brand">MNL INDUSTRIES</span>
-        </div>
-        <nav class="mnl-nav">
-            <ul>
-                <li><a href="index.html">ACCUEIL</a></li>
-                <li><a href="#machines">SYSTÈMES</a></li>
-                <li><a href="#tech">TECHNOLOGIE</a></li>
-            </ul>
+    <meta name="theme-color" content="#050505">
+    <meta name="description" content="MNL Industries — Industrie de mobilité, d'ingénierie et de technologies du futur.">
+
+    <title>MNL INDUSTRIES — Future In Motion</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         INTRO / CHARGEMENT
+    ====================================================== -->
+
+    <div id="loader">
+        <div class="loader-logo">M</div>
+        <div class="loader-line"></div>
+        <p>MNL INDUSTRIES</p>
+        <span>INITIALISATION DU SYSTÈME...</span>
+    </div>
+
+
+    <!-- =====================================================
+         BARRE DE NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <a href="#home" class="brand">
+            <div class="brand-logo">M</div>
+
+            <div class="brand-text">
+                <strong>MNL</strong>
+                <span>INDUSTRIES</span>
+            </div>
+        </a>
+
+        <nav id="mainNav">
+
+            <a href="#home">ACCUEIL</a>
+            <a href="#vehicles">VÉHICULES</a>
+            <a href="#divisions">DIVISIONS</a>
+            <a href="#lab">MNL LAB</a>
+            <a href="#vision">VISION</a>
+
         </nav>
+
+        <button class="menu-button" id="menuButton">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </header>
 
-    <!-- SECTION HÉRO IMMERSIVE -->
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="badge-futur">DIVISION AVANCÉE // 2026</span>
-            <h1 class="hero-title">MNL INDUSTRIES</h1>
-            <p class="hero-tagline">L'IMPOSSIBLE DEVIENT INGÉNIERIE.</p>
-            <p class="hero-subtitle">Architecture quantique, propulsion photonique et design noir-or absolu.</p>
-            <div class="hero-btns">
-                <a href="#machines" class="btn btn-primary">EXPLORER LES MODÈLES</a>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-grid"></div>
+
+            <div class="hero-content">
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    MNL SYSTEM ONLINE
+                </div>
+
+                <p class="eyebrow">
+                    MOBILITY • ENGINEERING • TECHNOLOGY
+                </p>
+
+                <h1>
+                    THE FUTURE
+                    <span>HAS A FORM.</span>
+                </h1>
+
+                <p class="hero-description">
+                    MNL Industries imagine et développe des concepts
+                    de mobilité qui repoussent les limites du design,
+                    de l'ingénierie et de la technologie.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#vehicles" class="btn btn-primary">
+                        EXPLORER MNL
+                        <span>→</span>
+                    </a>
+
+                    <a href="#lab" class="btn btn-outline">
+                        ENTRER DANS MNL LAB
+                    </a>
+
+                </div>
+
             </div>
+
+
+            <!-- Décor technique -->
+
+            <div class="hero-tech tech-left">
+                <span>SYS_001</span>
+                <span>PROPULSION</span>
+                <span>AI CORE</span>
+            </div>
+
+            <div class="hero-tech tech-right">
+                <span>PROJECT</span>
+                <strong>MNL-X</strong>
+                <span>CONCEPT</span>
+            </div>
+
+
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <div></div>
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MANIFESTE
+        ================================================== -->
+
+        <section class="manifesto section">
+
+            <div class="section-number">01</div>
+
+            <div class="manifesto-content">
+
+                <p class="eyebrow">NOTRE PHILOSOPHIE</p>
+
+                <h2>
+                    Nous ne suivons pas
+                    <span>le futur.</span>
+                </h2>
+
+                <p>
+                    Nous essayons de le construire.
+                </p>
+
+                <div class="manifesto-line"></div>
+
+                <p class="large-text">
+                    MNL Industries est une entreprise virtuelle de
+                    recherche, de conception et d'innovation dédiée
+                    à la mobilité de demain.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VÉHICULES
+        ================================================== -->
+
+        <section id="vehicles" class="vehicles section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">02 / MNL AUTOMOTIVE</p>
+
+                    <h2>
+                        NOS <span>MACHINES</span>
+                    </h2>
+                </div>
+
+                <p>
+                    Des concepts numériques imaginés pour explorer
+                    différentes visions de la mobilité.
+                </p>
+
+            </div>
+
+
+            <div class="vehicles-grid">
+
+
+                <!-- M0 -->
+
+                <article class="vehicle-card featured">
+
+                    <div class="vehicle-image">
+
+                        <img
+                            src="MNL M.0.png"
+                            alt="MNL M0"
+                            onerror="this.style.display='none';"
+                        >
+
+                        <div class="image-overlay"></div>
+
+                        <span class="vehicle-status">
+                            CONCEPT 00
+                        </span>
+
+                        <span class="vehicle-number">
+                            M.0
+                        </span>
+
+                    </div>
+
+                    <div class="vehicle-info">
+
+                        <div>
+                            <h3>MNL M.0</h3>
+                            <p>ORIGIN CONCEPT</p>
+                        </div>
+
+                        <button onclick="openVehicle('MNL M.0','ORIGIN CONCEPT','Le point de départ de la nouvelle génération MNL.')">
+                            EXPLORER →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- M1 -->
+
+                <article class="vehicle-card">
+
+                    <div class="vehicle-image">
+
+                        <img
+                            src="MNL M1.png"
+                            alt="MNL M1"
+                        >
+
+                        <div class="image-overlay"></div>
+
+                        <span class="vehicle-status">
+                            MNL 01
+                        </span>
+
+                    </div>
+
+                    <div class="vehicle-info">
+
+                        <div>
+                            <h3>MNL M1</h3>
+                            <p>URBAN MOBILITY</p>
+                        </div>
+
+                        <button onclick="openVehicle('MNL M1','URBAN MOBILITY','Une vision compacte, intelligente et accessible de la mobilité MNL.')">
+                            EXPLORER →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- M2 -->
+
+                <article class="vehicle-card">
+
+                    <div class="vehicle-image">
+
+                        <img
+                            src="MNL M2 .jpg"
+                            alt="MNL M2"
+                        >
+
+                        <div class="image-overlay"></div>
+
+                        <span class="vehicle-status">
+                            MNL 02
+                        </span>
+
+                    </div>
+
+                    <div class="vehicle-info">
+
+                        <div>
+                            <h3>MNL M2</h3>
+                            <p>PERFORMANCE</p>
+                        </div>
+
+                        <button onclick="openVehicle('MNL M2','PERFORMANCE','Une interprétation sportive et expérimentale de la mobilité MNL.')">
+                            EXPLORER →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- M3 -->
+
+                <article class="vehicle-card featured">
+
+                    <div class="vehicle-image">
+
+                        <img
+                            src="MNL M3.png"
+                            alt="MNL M3"
+                        >
+
+                        <div class="image-overlay"></div>
+
+                        <span class="vehicle-status">
+                            MNL 03
+                        </span>
+
+                    </div>
+
+                    <div class="vehicle-info">
+
+                        <div>
+                            <h3>MNL M3</h3>
+                            <p>VISION GT</p>
+                        </div>
+
+                        <button onclick="openVehicle('MNL M3','VISION GT','Un concept haute performance destiné à explorer les limites du design MNL.')">
+                            EXPLORER →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- M6 -->
+
+                <article class="vehicle-card">
+
+                    <div class="vehicle-image">
+
+                        <img
+                            src="MNL M6.png"
+                            alt="MNL M6"
+                        >
+
+                        <div class="image-overlay"></div>
+
+                        <span class="vehicle-status">
+                            MNL 06
+                        </span>
+
+                    </div>
+
+                    <div class="vehicle-info">
+
+                        <div>
+                            <h3>MNL M6</h3>
+                            <p>FUTURE MOBILITY</p>
+                        </div>
+
+                        <button onclick="openVehicle('MNL M6','FUTURE MOBILITY','Un laboratoire roulant consacré aux technologies de mobilité futures.')">
+                            EXPLORER →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DIVISIONS
+        ================================================== -->
+
+        <section id="divisions" class="divisions section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">03 / MNL INDUSTRIES</p>
+
+                    <h2>
+                        PLUS QU'UNE
+                        <span>AUTOMOBILE.</span>
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="division-grid">
+
+                <article class="division-card">
+                    <span class="division-number">01</span>
+                    <div class="division-icon">🚗</div>
+                    <h3>MNL AUTOMOTIVE</h3>
+                    <p>
+                        Voitures, prototypes et concepts de mobilité
+                        terrestre.
+                    </p>
+                </article>
+
+
+                <article class="division-card">
+                    <span class="division-number">02</span>
+                    <div class="division-icon">🏍️</div>
+                    <h3>MNL MOTOR</h3>
+                    <p>
+                        Motos et véhicules à deux roues expérimentaux.
+                    </p>
+                </article>
+
+
+                <article class="division-card">
+                    <span class="division-number">03</span>
+                    <div class="division-icon">✈️</div>
+                    <h3>MNL AERO</h3>
+                    <p>
+                        Concepts aéronautiques et nouvelles visions
+                        de la mobilité aérienne.
+                    </p>
+                </article>
+
+
+                <article class="division-card">
+                    <span class="division-number">04</span>
+                    <div class="division-icon">🛸</div>
+                    <h3>MNL DRONE</h3>
+                    <p>
+                        Drones autonomes et systèmes aériens
+                        intelligents.
+                    </p>
+                </article>
+
+
+                <article class="division-card">
+                    <span class="division-number">05</span>
+                    <div class="division-icon">⚡</div>
+                    <h3>MNL ENERGY</h3>
+                    <p>
+                        Recherche conceptuelle autour de l'énergie
+                        et de la propulsion.
+                    </p>
+                </article>
+
+
+                <article class="division-card">
+                    <span class="division-number">06</span>
+                    <div class="division-icon">🧠</div>
+                    <h3>MNL AI</h3>
+                    <p>
+                        Intelligence artificielle et systèmes
+                        intelligents embarqués.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MNL LAB
+        ================================================== -->
+
+        <section id="lab" class="lab section">
+
+            <div class="lab-background"></div>
+
+            <div class="lab-content">
+
+                <p class="eyebrow">
+                    04 / RESEARCH & DEVELOPMENT
+                </p>
+
+                <h2>
+                    MNL
+                    <span>LAB</span>
+                </h2>
+
+                <p class="lab-description">
+                    Ici commencent les idées qui n'ont pas encore
+                    trouvé leur forme.
+                </p>
+
+
+                <div class="lab-grid">
+
+                    <div class="lab-item">
+                        <span>01</span>
+                        <strong>AI CORE</strong>
+                        <p>Intelligence artificielle embarquée.</p>
+                    </div>
+
+                    <div class="lab-item">
+                        <span>02</span>
+                        <strong>ACTIVE AERO</strong>
+                        <p>Aérodynamique conceptuelle.</p>
+                    </div>
+
+                    <div class="lab-item">
+                        <span>03</span>
+                        <strong>ENERGY</strong>
+                        <p>Technologies énergétiques futures.</p>
+                    </div>
+
+                    <div class="lab-item">
+                        <span>04</span>
+                        <strong>AUTONOMY</strong>
+                        <p>Systèmes autonomes expérimentaux.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VISION
+        ================================================== -->
+
+        <section id="vision" class="vision section">
+
+            <div class="section-number">05</div>
+
+            <div class="vision-content">
+
+                <p class="eyebrow">THE MNL VISION</p>
+
+                <h2>
+                    AUJOURD'HUI
+                    <span>CONCEPT.</span>
+                </h2>
+
+                <h2>
+                    DEMAIN
+                    <span>PROTOTYPE.</span>
+                </h2>
+
+                <p>
+                    Notre objectif est de transformer progressivement
+                    les concepts numériques en projets d'ingénierie
+                    réels.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+
+                    <div class="brand-logo">M</div>
+
+                    <div>
+                        <strong>MNL</strong>
+                        <span>INDUSTRIES</span>
+                    </div>
+
+                </div>
+
+                <p>
+                    L'impossible devient ingénierie.
+                </p>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 MNL INDUSTRIES
+                </span>
+
+                <span>
+                    VIRTUAL INDUSTRY / CONCEPT DEVELOPMENT
+                </span>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL MODÈLE
+    ====================================================== -->
+
+    <div id="vehicleModal" class="vehicle-modal">
+
+        <div class="modal-box">
+
+            <button
+                class="modal-close"
+                onclick="closeVehicle()">
+                ×
+            </button>
+
+            <p class="eyebrow" id="modalCategory">
+                CONCEPT
+            </p>
+
+            <h2 id="modalTitle">
+                MNL M1
+            </h2>
+
+            <div class="modal-line"></div>
+
+            <p id="modalDescription">
+                Description du modèle.
+            </p>
+
+            <div class="modal-tags">
+
+                <span>CONCEPT</span>
+                <span>MNL LAB</span>
+                <span>FUTURE</span>
+
+            </div>
+
         </div>
-    </section>
 
-    <!-- SECTION CATALOGUE DES MODÈLES & TECHNOLOGIE -->
-    <section id="machines" class="machines-section">
-        <div class="section-header">
-            <h2>FLOTTE DE VÉHICULES ET MACHINES</h2>
-            <p class="section-desc">Chaque modèle intègre un système de propulsion et un mode de fonctionnement unique.</p>
-        </div>
-        
-        <div class="grid-container">
-            
-            <!-- MODÈLE M1 -->
-            <div class="machine-card">
-                <div class="img-wrapper">
-                    <img src="MNL M1.png" alt="MNL M1" draggable="false" onerror="this.src='MNL M1.png'">
-                </div>
-                <div class="card-info">
-                    <span class="model-code">MODÈLE // 01</span>
-                    <h3>MNL M1</h3>
-                    <p class="model-role">Hypercar Urbaine Autonome</p>
-                    <div class="tech-spec">
-                        <strong>Fonctionnement :</strong> Propulsion électrique à flux quantique direct. Ajustement aérodynamique de la carrosserie en temps réel via l'IA centrale MNL.
-                    </div>
-                </div>
-            </div>
+    </div>
 
-            <!-- MODÈLE M2 -->
-            <div class="machine-card">
-                <div class="img-wrapper">
-                    <img src="MNL M2 .jpg" alt="MNL M2" draggable="false">
-                </div>
-                <div class="card-info">
-                    <span class="model-code">MODÈLE // 02</span>
-                    <h3>MNL M2</h3>
-                    <p class="model-role">GT Sportive Extrême</p>
-                    <div class="tech-spec">
-                        <strong>Fonctionnement :</strong> Moteur à aimants supraconducteurs et appui aérodynamique inversé. Conçu pour maximiser l'adhérence à haute vitesse sur circuit virtuel.
-                    </div>
-                </div>
-            </div>
 
-            <!-- MODÈLE M3 -->
-            <div class="machine-card">
-                <div class="img-wrapper">
-                    <img src="MNL M3.png" alt="MNL M3" draggable="false">
-                </div>
-                <div class="card-info">
-                    <span class="model-code">MODÈLE // 03</span>
-                    <h3>MNL M3</h3>
-                    <p class="model-role">Prototype Visionnaire Haut de Gamme</p>
-                    <div class="tech-spec">
-                        <strong>Fonctionnement :</strong> Cellules énergétiques à densité ultra-élevée et nanomatériaux auto-réparants intégrés dans la coque en carbone brut.
-                    </div>
-                </div>
-            </div>
-
-            <!-- MODÈLE M6 -->
-            <div class="machine-card">
-                <div class="img-wrapper">
-                    <img src="MNL M6.png" alt="MNL M6" draggable="false">
-                </div>
-                <div class="card-info">
-                    <span class="model-code">MODÈLE // 06</span>
-                    <h3>MNL M6</h3>
-                    <p class="model-role">Berline Technologique Autonome</p>
-                    <div class="tech-spec">
-                        <strong>Fonctionnement :</strong> Intelligence artificielle intégrée gérant la suspension active par l'air et un système de conduite prédictive neuronale.
-                    </div>
-                </div>
-            </div>
-
-            <!-- MODÈLE M.O (MOTOS) -->
-            <div class="machine-card">
-                <div class="img-wrapper">
-                    <img src="MNL M.O.png" alt="MNL M.O" draggable="false">
-                </div>
-                <div class="card-info">
-                    <span class="model-code">DIVISION // MOTO</span>
-                    <h3>MNL M.O</h3>
-                    <p class="model-role">Moto Hypersport Vectorielle</p>
-                    <div class="tech-spec">
-                        <strong>Fonctionnement :</strong> Moteur vectoriel à haut rendement couplé à un système d'auto-stabilisation gyroscopique quantique pour un équilibre absolu.
-                    </div>
-                </div>
-            </div>
-
-            <!-- MODÈLE PM (PROTOTYPE) -->
-            <div class="machine-card">
-                <div class="img-wrapper">
-                    <img src="MNL PM.png" alt="MNL PM" draggable="false">
-                </div>
-                <div class="card-info">
-                    <span class="model-code">PROTOTYPE // LAB</span>
-                    <h3>MNL PM</h3>
-                    <p class="model-role">Machine Expérimentale Avancée</p>
-                    <div class="tech-spec">
-                        <strong>Fonctionnement :</strong> Test de nouvelles interfaces holographiques et de moteurs à impulsion magnétique silencieuse. Réservé à l'élite technologique.
-                    </div>
-                </div>
-            </div>
-
-            <!-- MODÈLE PRODUIT GLOBAL -->
-            <div class="machine-card">
-                <div class="img-wrapper">
-                    <img src="MNL PRODUIT .png" alt="MNL PRODUIT" draggable="false">
-                </div>
-                <div class="card-info">
-                    <span class="model-code">INFRASTRUCTURE</span>
-                    <h3>MNL PRODUIT GLOBAL</h3>
-                    <p class="model-role">Écosystème Industriel Complet</p>
-                    <div class="tech-spec">
-                        <strong>Fonctionnement :</strong> Vue d'ensemble de la modularité MNL : assemblage de châssis monocoques ultrarésistants et de batteries interchangeables en 60 secondes.
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- PIED DE PAGE FUTURISTE -->
-    <footer class="mnl-footer">
-        <div class="footer-glow"></div>
-        <p>&copy; 2026 MNL Industries. Tous droits réservés.</p>
-        <p class="disclaimer"><strong>AVERTISSEMENT :</strong> Entreprise de technologie virtuelle. Concepts d'ingénierie de pointe protégés par cryptographie.</p>
-    </footer>
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
     <script src="js/app.js"></script>
+
 </body>
 </html>
