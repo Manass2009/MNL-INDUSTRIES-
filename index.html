@@ -10,7 +10,7 @@
   <nav class="navbar">
     <div class="logo"><span class="m-logo">M</span><span>MNL</span></div>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">ACCUEIL</a></li>
+      <li><a href="index.html">ACCUEIL</a></li>
       <li><a href="automobiles.html">AUTOMOBILE</a></li>
       <li><a href="motos.html">MOTOS</a></li>
       <li><a href="aviation.html">AVIATION</a></li>
@@ -31,82 +31,65 @@
     </div>
   </section>
 
-  <!-- SECTION VITRINE GLOBALE & NOUVEAUX CONCEPTS -->
+  <!-- CATALOGUE COMPLET DE TOUTES LES IMAGES DU DÉPÔT (SANS TITAN) -->
   <section class="machines">
-    <h2>FLOTTE OFFICIELLE & INNOVATIONS</h2>
-    <p class="section-sub">Parcourez l'ensemble des concepts de pointe (Motos, Avions, Drones et Supercars)</p>
+    <h2>INDEX GLOBAL DES CONCEPTS MNL</h2>
+    <p style="text-align:center; color:#888; margin-bottom:30px;">Toutes les créations officielles (Motos, Avions, Drones, Prototypes)</p>
     
     <div class="cards">
-      <!-- AUTOMOBILE -->
-      <div class="card" data-id="m1">
-        <img src="MNL M1.png" alt="M1">
-        <h3>M1</h3><p>URBAN MOBILITY</p><span class="status">CONCEPT</span>
-        <div class="vote-container">
-          <button class="vote-btn like-btn" onclick="vote('m1', 'like')">👍 <span class="like-count">0</span></button>
-          <button class="vote-btn dislike-btn" onclick="vote('m1', 'dislike')">👎 <span class="dislike-count">0</span></button>
-        </div>
-      </div>
+      
+      <!-- AUTOMOBILES & SUPERCARS -->
+      <div class="card" data-id="m1" data-theme="premium"><img src="MNL M1.png" alt="M1"><h3>M1</h3><p>URBAN MOBILITY</p><span class="status">CONCEPT</span><div class="vote-box"><button onclick="vote('m1', 'like')">👍 <span id="l-m1">0</span></button><button onclick="vote('m1', 'dislike')">👎 <span id="d-m1">0</span></button></div></div>
+      <div class="card" data-id="m2" data-theme="performance"><img src="MNL M2 .jpg" alt="M2"><h3>M2</h3><p>PERFORMANCE</p><span class="status">PROTOTYPE</span><div class="vote-box"><button onclick="vote('m2', 'like')">👍 <span id="l-m2">0</span></button><button onclick="vote('m2', 'dislike')">👎 <span id="d-m2">0</span></button></div></div>
+      <div class="card" data-id="m3" data-theme="vision"><img src="MNL M3.png" alt="M3"><h3>M3</h3><p>VISION</p><span class="status">VISION</span><div class="vote-box"><button onclick="vote('m3', 'like')">👍 <span id="l-m3">0</span></button><button onclick="vote('m3', 'dislike')">👎 <span id="d-m3">0</span></button></div></div>
+      <div class="card" data-id="m4" data-theme="luxury"><img src="M4.jpg" alt="M4"><h3>M4</h3><p>GT HYBRIDE</p><span class="status">CONCEPT</span><div class="vote-box"><button onclick="vote('m4', 'like')">👍 <span id="l-m4">0</span></button><button onclick="vote('m4', 'dislike')">👎 <span id="d-m4">0</span></button></div></div>
+      <div class="card" data-id="m5" data-theme="luxury"><img src="M5.jpg" alt="M5"><h3>M5</h3><p>HYPERCAR</p><span class="status">PROTOTYPE</span><div class="vote-box"><button onclick="vote('m5', 'like')">👍 <span id="l-m5">0</span></button><button onclick="vote('m5', 'dislike')">👎 <span id="d-m5">0</span></button></div></div>
+      <div class="card" data-id="m6" data-theme="luxury"><img src="MNL M6.png" alt="M6"><h3>M6</h3><p>BERLINE TECHNOLOGIQUE</p><span class="status">LABORATOIRE</span><div class="vote-box"><button onclick="vote('m6', 'like')">👍 <span id="l-m6">0</span></button><button onclick="vote('m6', 'dislike')">👎 <span id="d-m6">0</span></button></div></div>
+      <div class="card" data-id="m11" data-theme="luxury"><img src="M11.jpg" alt="M11"><h3>M11</h3><p>ULTIMATE COUPE</p><span class="status">CONCEPT</span><div class="vote-box"><button onclick="vote('m11', 'like')">👍 <span id="l-m11">0</span></button><button onclick="vote('m11', 'dislike')">👎 <span id="d-m11">0</span></button></div></div>
+      <div class="card" data-id="mnls1" data-theme="luxury"><img src="Mnl s1.jpg" alt="Mnl s1"><h3>MNL S1</h3><p>SPIDER SPORT</p><span class="status">PROTOTYPE</span><div class="vote-box"><button onclick="vote('mnls1', 'like')">👍 <span id="l-mnls1">0</span></button><button onclick="vote('mnls1', 'dislike')">👎 <span id="d-mnls1">0</span></button></div></div>
 
-      <div class="card" data-id="m2">
-        <img src="MNL M2.jpg" alt="M2">
-        <h3>M2</h3><p>PERFORMANCE GT</p><span class="status">PROTOTYPE</span>
-        <div class="vote-container">
-          <button class="vote-btn like-btn" onclick="vote('m2', 'like')">👍 <span class="like-count">0</span></button>
-          <button class="vote-btn dislike-btn" onclick="vote('m2', 'dislike')">👎 <span class="dislike-count">0</span></button>
-        </div>
-      </div>
+      <!-- MOTOS & AM -->
+      <div class="card" data-id="mmo" data-theme="premium"><img src="MNL MOpng" alt="MNL MO"><h3>MNL M.O</h3><p>MOTO VECTORIELLE</p><span class="status">MOTO</span><div class="vote-box"><button onclick="vote('mmo', 'like')">👍 <span id="l-mmo">0</span></button><button onclick="vote('mmo', 'dislike')">👎 <span id="d-mmo">0</span></button></div></div>
+      <div class="card" data-id="am1" data-theme="performance"><img src="Am1.jpg" alt="Am1"><h3>AM1</h3><p>MOTO HYPERSPORT</p><span class="status">MOTO</span><div class="vote-box"><button onclick="vote('am1', 'like')">👍 <span id="l-am1">0</span></button><button onclick="vote('am1', 'dislike')">👎 <span id="d-am1">0</span></button></div></div>
 
-      <!-- AVIATION (A et Titan) -->
-      <div class="card" data-id="titan">
-        <img src="D14.jpg" alt="D14">
-        <h3>D14</h3><p>AVIATION STRATÉGIQUE</p><span class="status">DRONE EXTRÊME</span>
-        <div class="vote-container">
-          <button class="vote-btn like-btn" onclick="vote('D14', 'like')">👍 <span class="like-count">0</span></button>
-          <button class="vote-btn dislike-btn" onclick="vote('D14', 'dislike')">👎 <span class="dislike-count">0</span></button>
-        </div>
-      </div>
+      <!-- AVIATION -->
+      <div class="card" data-id="a1" data-theme="vision"><img src="A1.jpg" alt="A1"><h3>A1 AERO</h3><p>PROPULSION PHOTONIQUE</p><span class="status">AVION</span><div class="vote-box"><button onclick="vote('a1', 'like')">👍 <span id="l-a1">0</span></button><button onclick="vote('a1', 'dislike')">👎 <span id="d-a1">0</span></button></div></div>
+      <div class="card" data-id="a2" data-theme="vision"><img src="A2.jpg" alt="A2"><h3>A2 AERO</h3><p>JET SUPERSONIQUE</p><span class="status">AVION</span><div class="vote-box"><button onclick="vote('a2', 'like')">👍 <span id="l-a2">0</span></button><button onclick="vote('a2', 'dislike')">👎 <span id="d-a2">0</span></button></div></div>
+      <div class="card" data-id="a3" data-theme="vision"><img src="A3.jpg" alt="A3"><h3>A3 AERO</h3><p>TRANSPORT ORBITAL</p><span class="status">AVION</span><div class="vote-box"><button onclick="vote('a3', 'like')">👍 <span id="l-a3">0</span></button><button onclick="vote('a3', 'dislike')">👎 <span id="d-a3">0</span></button></div></div>
+      <div class="card" data-id="ac" data-theme="vision"><img src="Ac.jpg" alt="Ac"><h3>AC-01</h3><p>AVIATION COMMERCIALE</p><span class="status">AVION</span><div class="vote-box"><button onclick="vote('ac', 'like')">👍 <span id="l-ac">0</span></button><button onclick="vote('ac', 'dislike')">👎 <span id="d-ac">0</span></button></div></div>
+      <div class="card" data-id="vt1" data-theme="vision"><img src="Vt1.jpg" alt="Vt1"><h3>VT1</h3><p>VTOL URBAIN</p><span class="status">AVIATION</span><div class="vote-box"><button onclick="vote('vt1', 'like')">👍 <span id="l-vt1">0</span></button><button onclick="vote('vt1', 'dislike')">👎 <span id="d-vt1">0</span></button></div></div>
 
-      <div class="card" data-id="a1">
-        <img src="A1.jpg" alt="A1">
-        <h3>A1 AERO</h3><p>PROPULSION PHOTONIQUE</p><span class="status">AVION</span>
-        <div class="vote-container">
-          <button class="vote-btn like-btn" onclick="vote('a1', 'like')">👍 <span class="like-count">0</span></button>
-          <button class="vote-btn dislike-btn" onclick="vote('a1', 'dislike')">👎 <span class="dislike-count">0</span></button>
-        </div>
-      </div>
+      <!-- DRONES (Série D de D1 à D15 + Dc) -->
+      <div class="card" data-id="d1" data-theme="performance"><img src="D1.jpg" alt="D1"><h3>MNL D1</h3><p>DRONE TACTIQUE</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d1', 'like')">👍 <span id="l-d1">0</span></button><button onclick="vote('d1', 'dislike')">👎 <span id="d-d1">0</span></button></div></div>
+      <div class="card" data-id="d2" data-theme="performance"><img src="D2.jpg" alt="D2"><h3>MNL D2</h3><p>DRONE RECON</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d2', 'like')">👍 <span id="l-d2">0</span></button><button onclick="vote('d2', 'dislike')">👎 <span id="d-d2">0</span></button></div></div>
+      <div class="card" data-id="d3" data-theme="performance"><img src="D3.jpg" alt="D3"><h3>MNL D3</h3><p>DRONE INTERCEPTEUR</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d3', 'like')">👍 <span id="l-d3">0</span></button><button onclick="vote('d3', 'dislike')">👎 <span id="d-d3">0</span></button></div></div>
+      <div class="card" data-id="d4" data-theme="performance"><img src="D4.jpg" alt="D4"><h3>MNL D4</h3><p>DRONE CARGO</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d4', 'like')">👍 <span id="l-d4">0</span></button><button onclick="vote('d4', 'dislike')">👎 <span id="d-d4">0</span></button></div></div>
+      <div class="card" data-id="d5" data-theme="performance"><img src="D5.jpg" alt="D5"><h3>MNL D5</h3><p>DRONE AUTONOME</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d5', 'like')">👍 <span id="l-d5">0</span></button><button onclick="vote('d5', 'dislike')">👎 <span id="d-d5">0</span></button></div></div>
+      <div class="card" data-id="d6" data-theme="performance"><img src="D6.jpg" alt="D6"><h3>MNL D6</h3><p>DRONE LOURD</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d6', 'like')">👍 <span id="l-d6">0</span></button><button onclick="vote('d6', 'dislike')">👎 <span id="d-d6">0</span></button></div></div>
+      <div class="card" data-id="d7" data-theme="performance"><img src="D7.jpg" alt="D7"><h3>MNL D7</h3><p>DRONE DISCRET</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d7', 'like')">👍 <span id="l-d7">0</span></button><button onclick="vote('d7', 'dislike')">👎 <span id="d-d7">0</span></button></div></div>
+      <div class="card" data-id="d8" data-theme="performance"><img src="D8.jpg" alt="D8"><h3>MNL D8</h3><p>DRONE DE POINTE</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d8', 'like')">👍 <span id="l-d8">0</span></button><button onclick="vote('d8', 'dislike')">👎 <span id="d-d8">0</span></button></div></div>
+      <div class="card" data-id="d9" data-theme="performance"><img src="D9.jpg" alt="D9"><h3>MNL D9</h3><p>DRONE STRATÉGIQUE</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d9', 'like')">👍 <span id="l-d9">0</span></button><button onclick="vote('d9', 'dislike')">👎 <span id="d-d9">0</span></button></div></div>
+      <div class="card" data-id="d10" data-theme="performance"><img src="D10.jpg" alt="D10"><h3>MNL D10</h3><p>DRONE RAPIDE</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d10', 'like')">👍 <span id="l-d10">0</span></button><button onclick="vote('d10', 'dislike')">👎 <span id="d-d10">0</span></button></div></div>
+      <div class="card" data-id="d11" data-theme="performance"><img src="D11.jpg" alt="D11"><h3>MNL D11</h3><p>DRONE DE SURVEILLANCE</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d11', 'like')">👍 <span id="l-d11">0</span></button><button onclick="vote('d11', 'dislike')">👎 <span id="d-d11">0</span></button></div></div>
+      <div class="card" data-id="d12" data-theme="performance"><img src="D12.jpg" alt="D12"><h3>MNL D12</h3><p>DRONE EXPLORATEUR</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d12', 'like')">👍 <span id="l-d12">0</span></button><button onclick="vote('d12', 'dislike')">👎 <span id="d-d12">0</span></button></div></div>
+      <div class="card" data-id="d13" data-theme="performance"><img src="D13.jpg" alt="D13"><h3>MNL D13</h3><p>DRONE QUANTIQUE</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d13', 'like')">👍 <span id="l-d13">0</span></button><button onclick="vote('d13', 'dislike')">👎 <span id="d-d13">0</span></button></div></div>
+      <div class="card" data-id="d14" data-theme="performance"><img src="D14.jpg" alt="D14"><h3>MNL D14</h3><p>DRONE DE COMBAT</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d14', 'like')">👍 <span id="l-d14">0</span></button><button onclick="vote('d14', 'dislike')">👎 <span id="d-d14">0</span></button></div></div>
+      <div class="card" data-id="d15" data-theme="performance"><img src="D15.jpg" alt="D15"><h3>MNL D15</h3><p>DRONE ULTIMATE</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('d15', 'like')">👍 <span id="l-d15">0</span></button><button onclick="vote('d15', 'dislike')">👎 <span id="d-d15">0</span></button></div></div>
+      <div class="card" data-id="dc" data-theme="performance"><img src="Dc.jpg" alt="Dc"><h3>MNL DC</h3><p>DRONE COMMAND</p><span class="status">DRONE</span><div class="vote-box"><button onclick="vote('dc', 'like')">👍 <span id="l-dc">0</span></button><button onclick="vote('dc', 'dislike')">👎 <span id="d-dc">0</span></button></div></div>
 
-      <!-- DRONES (Série D) -->
-      <div class="card" data-id="d1">
-        <img src="D1.jpg" alt="D1">
-        <h3>MNL D1</h3><p>DRONE DE TRANSPORT</p><span class="status">DRONE</span>
-        <div class="vote-container">
-          <button class="vote-btn like-btn" onclick="vote('d1', 'like')">👍 <span class="like-count">0</span></button>
-          <button class="vote-btn dislike-btn" onclick="vote('d1', 'dislike')">👎 <span class="dislike-count">0</span></button>
-        </div>
-      </div>
+      <!-- AUTRES PROTOTYPES & LABS -->
+      <div class="card" data-id="mnlpm" data-theme="luxury"><img src="MNL PM.png" alt="MNL PM"><h3>MNL PM</h3><p>PROTOTYPE LAB</p><span class="status">LAB</span><div class="vote-box"><button onclick="vote('mnlpm', 'like')">👍 <span id="l-mnlpm">0</span></button><button onclick="vote('mnlpm', 'dislike')">👎 <span id="d-mnlpm">0</span></button></div></div>
+      <div class="card" data-id="mnlproduit" data-theme="luxury"><img src="MNL PRODUIT .png" alt="MNL PRODUIT"><h3>MNL PRODUIT</h3><p>ECOSYSTEME GLOBAL</p><span class="status">PRODUIT</span><div class="vote-box"><button onclick="vote('mnlproduit', 'like')">👍 <span id="l-mnlproduit">0</span></button><button onclick="vote('mnlproduit', 'dislike')">👎 <span id="d-mnlproduit">0</span></button></div></div>
+      <div class="card" data-id="h1" data-theme="luxury"><img src="H1.jpg" alt="H1"><h3>MNL H1</h3><p>HOVERBOARD TECH</p><span class="status">PROTOTYPE</span><div class="vote-box"><button onclick="vote('h1', 'like')">👍 <span id="l-h1">0</span></button><button onclick="vote('h1', 'dislike')">👎 <span id="d-h1">0</span></button></div></div>
+      <div class="card" data-id="o7" data-theme="luxury"><img src="O7.jpg" alt="O7"><h3>MNL O7</h3><p>ORBITAL UNIT</p><span class="status">PROTOTYPE</span><div class="vote-box"><button onclick="vote('o7', 'like')">👍 <span id="l-o7">0</span></button><button onclick="vote('o7', 'dislike')">👎 <span id="d-o7">0</span></button></div></div>
+      <div class="card" data-id="r1" data-theme="luxury"><img src="R1.jpg" alt="R1"><h3>MNL R1</h3><p>ROVER TERRESTRE</p><span class="status">PROTOTYPE</span><div class="vote-box"><button onclick="vote('r1', 'like')">👍 <span id="l-r1">0</span></button><button onclick="vote('r1', 'dislike')">👎 <span id="d-r1">0</span></button></div></div>
+      <div class="card" data-id="x1" data-theme="luxury"><img src="X1.jpg" alt="X1"><h3>MNL X1</h3><p>EXPÉRIMENTAL X</p><span class="status">LAB</span><div class="vote-box"><button onclick="vote('x1', 'like')">👍 <span id="l-x1">0</span></button><button onclick="vote('x1', 'dislike')">👎 <span id="d-x1">0</span></button></div></div>
+      <div class="card" data-id="x2" data-theme="luxury"><img src="X2.jpg" alt="X2"><h3>MNL X2</h3><p>EXPÉRIMENTAL XX</p><span class="status">LAB</span><div class="vote-box"><button onclick="vote('x2', 'like')">👍 <span id="l-x2">0</span></button><button onclick="vote('x2', 'dislike')">👎 <span id="d-x2">0</span></button></div></div>
 
-      <div class="card" data-id="d10">
-        <img src="D10.jpg" alt="D10">
-        <h3>MNL D10</h3><p>DRONE TACTIQUE</p><span class="status">DRONE</span>
-        <div class="vote-container">
-          <button class="vote-btn like-btn" onclick="vote('d10', 'like')">👍 <span class="like-count">0</span></button>
-          <button class="vote-btn dislike-btn" onclick="vote('d10', 'dislike')">👎 <span class="dislike-count">0</span></button>
-        </div>
-      </div>
-
-      <!-- MOTOS -->
-      <div class="card" data-id="moto">
-        <img src="MNL M.O.png" alt="Moto">
-        <h3>MNL M.O</h3><p>HYPERSPORT VECTORIELLE</p><span class="status">MOTO</span>
-        <div class="vote-container">
-          <button class="vote-btn like-btn" onclick="vote('moto', 'like')">👍 <span class="like-count">0</span></button>
-          <button class="vote-btn dislike-btn" onclick="vote('moto', 'dislike')">👎 <span class="dislike-count">0</span></button>
-        </div>
-      </div>
     </div>
   </section>
 
-  <footer>© 2026 MNL INDUSTRIES. Concepts virtuels protégés.</footer>
+  <footer>© 2026 MNL INDUSTRIES. Concepts virtuels.</footer>
   <script src="js/app.js"></script>
 </body>
 </html>
