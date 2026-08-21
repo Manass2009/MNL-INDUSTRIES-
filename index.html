@@ -5,196 +5,225 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MNL INDUSTRIES — L'impossible devient ingénierie</title>
   <style>
-    /* DESIGN STRICT NOIR & OR (Zéro rouge, zéro blanc) */
+    /* DESIGN HOLOGRAPHIQUE & FUTURISTE (Or pâle / Noir carbone) */
+    :root {
+      --gold-holo: #dfc374;
+      --gold-glow: rgba(223, 195, 116, 0.25);
+      --bg-dark: #030303;
+      --card-bg: #0a0a0a;
+      --border-holo: rgba(223, 195, 116, 0.35);
+    }
+
     body {
-      background-color: #000000;
-      color: #d4af37;
-      font-family: Arial, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--gold-holo);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 0;
+      letter-spacing: 0.5px;
     }
+
+    /* BARRE DE NAVIGATION IMMERSIVE */
     .navbar {
-      background: #000000;
-      border-bottom: 2px solid #d4af37;
+      background: rgba(3, 3, 3, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-holo);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
+      padding: 15px 30px;
       position: sticky;
       top: 0;
       z-index: 100;
     }
     .logo {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
-      color: #d4af37;
+      color: var(--gold-holo);
+      display: flex;
+      align-items: center;
     }
     .m-logo {
-      background: #d4af37;
-      color: #000000;
-      padding: 2px 8px;
-      margin-right: 5px;
+      background: var(--gold-holo);
+      color: #030303;
+      padding: 3px 8px;
+      margin-right: 8px;
+      font-weight: 900;
     }
     .nav-links {
       list-style: none;
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
     }
     .nav-links a {
-      color: #d4af37;
+      color: var(--gold-holo);
       text-decoration: none;
-      font-weight: bold;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      opacity: 0.85;
+      transition: opacity 0.2s, text-shadow 0.2s;
     }
     .nav-links a:hover {
-      text-shadow: 0 0 8px #d4af37;
+      opacity: 1;
+      text-shadow: 0 0 10px var(--gold-holo);
     }
+
+    /* SECTION ACCUEIL CAPTIVANTE (Style flux direct) */
     .hero {
+      padding: 40px 20px 20px 20px;
       text-align: center;
-      padding: 80px 20px;
-      background: #000000;
-      border-bottom: 1px solid #d4af37;
+      border-bottom: 1px solid var(--border-holo);
+      background: radial-gradient(circle at center, #111 0%, #030303 70%);
     }
     .hero h1 {
-      font-size: 4rem;
-      color: #d4af37;
-      margin-bottom: 10px;
-    }
-    .signature {
-      font-size: 1.2rem;
-      color: #d4af37;
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-    }
-    .creator-tag {
-      color: #d4af37;
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      text-transform: uppercase;
+      font-size: 2.2rem;
+      color: var(--gold-holo);
+      margin: 0 0 10px 0;
       letter-spacing: 2px;
     }
-    .subtitle {
-      color: #d4af37;
-      font-size: 1rem;
-      margin-bottom: 30px;
+    .signature {
+      font-size: 0.95rem;
+      color: var(--gold-holo);
+      opacity: 0.9;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
     }
+    .creator-tag {
+      color: var(--gold-holo);
+      font-size: 0.8rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* FLUX DE CONTENU STYLE "GOOGLE NEWS" SANS CADRES LOURDS */
     .machines {
-      padding: 50px 20px;
-      max-width: 1400px;
+      padding: 30px 15px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .machines h2 {
-      text-align: center;
-      color: #d4af37;
-      margin-bottom: 40px;
-      font-size: 2rem;
-      border-bottom: 1px solid #d4af37;
-      padding-bottom: 10px;
+      color: var(--gold-holo);
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      border-left: 3px solid var(--gold-holo);
+      padding-left: 10px;
+      letter-spacing: 1px;
     }
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 25px;
     }
     .card {
-      background: #0b0b0b;
-      border: 1px solid #d4af37;
-      padding: 20px;
-      text-align: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border-holo);
+      border-radius: 6px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px #d4af37;
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border: 1px solid #d4af37;
-      margin-bottom: 15px;
-      cursor: pointer;
-    }
-    .card h3 {
-      color: #d4af37;
-      margin: 5px 0;
-      font-size: 1rem;
-      word-break: break-all;
-    }
-    .card p {
-      color: #d4af37;
-      font-size: 0.85rem;
-      margin-bottom: 10px;
-      opacity: 0.8;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 20px var(--gold-glow);
     }
     
-    /* INTERACTION LIKES / DISLIKES & COMMENTAIRES */
+    /* IMAGES FLUIDES SANS ENCADREMENT BLOQUANT */
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border-holo);
+      transition: opacity 0.2s;
+    }
+    .card img:hover {
+      opacity: 0.9;
+    }
+
+    .card-info {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h3 {
+      color: var(--gold-holo);
+      margin: 0 0 5px 0;
+      font-size: 1rem;
+    }
+    .card p {
+      color: var(--gold-holo);
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin: 0 0 12px 0;
+    }
+    
+    /* INTERACTIONS (VOTES & COMMENTAIRES ÉPURÉS) */
     .interaction-box {
-      margin-top: 15px;
-      border-top: 1px dashed #d4af37;
+      border-top: 1px dashed rgba(223, 195, 116, 0.2);
       padding-top: 10px;
-      text-align: left;
+      margin-top: 10px;
     }
     .vote-buttons {
       display: flex;
-      justify-content: space-around;
-      margin-bottom: 10px;
+      justify-content: space-between;
+      margin-bottom: 8px;
     }
     .vote-buttons button {
-      background: #000000;
-      color: #d4af37;
-      border: 1px solid #d4af37;
-      padding: 5px 10px;
+      background: transparent;
+      color: var(--gold-holo);
+      border: 1px solid var(--border-holo);
+      padding: 4px 10px;
       cursor: pointer;
-      font-weight: bold;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      border-radius: 4px;
     }
     .vote-buttons button:hover {
-      background: #d4af37;
-      color: #000000;
+      background: var(--gold-holo);
+      color: #030303;
     }
     .comment-section input, .comment-section textarea {
       width: 100%;
-      background: #000000;
-      border: 1px solid #d4af37;
-      color: #d4af37;
+      background: #030303;
+      border: 1px solid var(--border-holo);
+      color: var(--gold-holo);
       padding: 6px;
       margin-bottom: 5px;
       box-sizing: border-box;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      border-radius: 3px;
     }
     .comment-section button {
-      background: #d4af37;
-      color: #000000;
+      background: var(--gold-holo);
+      color: #030303;
       border: none;
-      padding: 5px 10px;
+      padding: 5px;
       font-weight: bold;
       cursor: pointer;
       width: 100%;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      border-radius: 3px;
     }
     .comment-list {
-      max-height: 100px;
+      max-height: 80px;
       overflow-y: auto;
-      margin-top: 8px;
-      font-size: 0.75rem;
-      text-align: left;
-      border-top: 1px solid #222;
-      padding-top: 5px;
+      margin-top: 6px;
+      font-size: 0.7rem;
+      border-top: 1px dotted rgba(223, 195, 116, 0.2);
+      padding-top: 4px;
     }
     .comment-item {
-      margin-bottom: 4px;
-      border-bottom: 1px dotted #333;
-      padding-bottom: 2px;
-      word-break: break-all;
+      margin-bottom: 3px;
+      opacity: 0.85;
     }
 
-    /* MODALE IMAGE EN GRAND */
+    /* MODALE D'AGRANDISSEMENT */
     .modal {
       display: none;
       position: fixed;
@@ -203,125 +232,119 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
+      background-color: rgba(3, 3, 3, 0.95);
       justify-content: center;
       align-items: center;
     }
     .modal-content {
-      background: #000000;
-      border: 2px solid #d4af37;
-      padding: 20px;
-      max-width: 900px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-holo);
+      padding: 15px;
+      max-width: 850px;
       width: 90%;
       text-align: center;
       position: relative;
+      border-radius: 6px;
     }
     .modal-content img {
       width: 100%;
       max-height: 75vh;
       object-fit: contain;
-      border: 1px solid #d4af37;
+      border: 1px solid var(--border-holo);
     }
     .close-btn {
       position: absolute;
-      top: -10px;
-      right: 10px;
-      color: #d4af37;
-      font-size: 40px;
+      top: 5px;
+      right: 15px;
+      color: var(--gold-holo);
+      font-size: 30px;
       cursor: pointer;
       background: none;
       border: none;
     }
 
     footer {
-      border-top: 1px solid #d4af37;
+      border-top: 1px solid var(--border-holo);
       text-align: center;
-      padding: 30px;
-      color: #d4af37;
-      background: #000000;
-      margin-top: 50px;
+      padding: 25px;
+      color: var(--gold-holo);
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRE DE NAVIGATION -->
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo"><span class="m-logo">M</span><span>MNL</span></div>
     <ul class="nav-links">
       <li><a href="#accueil">ACCUEIL</a></li>
       <li><a href="#aviation">AVIATION</a></li>
       <li><a href="#drones">DRONES</a></li>
-      <li><a href="#automobiles">AUTOMOBILES</a></li>
+      <li><a href="#automobiles">AUTO</a></li>
       <li><a href="#motos">MOTOS</a></li>
-      <li><a href="#archives">ARCHIVES & DIVERS</a></li>
+      <li><a href="#archives">LAB</a></li>
     </ul>
   </nav>
 
-  <!-- SECTION ACCUEIL -->
+  <!-- ACCUEIL FLUIDE (Accroche immédiate) -->
   <section class="hero" id="accueil">
     <div class="hero-content">
-      <h1>MNL</h1>
       <p class="signature">L'IMPOSSIBLE DEVIENT INGÉNIERIE</p>
-      <div class="creator-tag">Fondé et imaginé par <strong>Manassé NTA MBWA</strong></div>
-      <p class="subtitle">Intégralité des fichiers du dépôt GitHub affichée en direct. Donnez votre avis et commentez chaque création.</p>
+      <div class="creator-tag">Imaginé par Manassé NTA MBWA</div>
     </div>
   </section>
 
-  <!-- SECTION AVIATION -->
+  <!-- SECTIONS DE CONTENU (Flux complet de toutes les images du dépôt) -->
   <section class="machines" id="aviation">
-    <h2>AVIATION & SPATIAL (A1, A2, A3, Ac, Vt1)</h2>
+    <h2>AVIATION & SPATIAL</h2>
     <div class="cards" id="grid-aviation"></div>
   </section>
 
-  <!-- SECTION DRONES -->
   <section class="machines" id="drones">
-    <h2>FLOTTE DE DRONES (D1 à D15 + DC)</h2>
+    <h2>FLOTTE DE DRONES</h2>
     <div class="cards" id="grid-drones"></div>
   </section>
 
-  <!-- SECTION AUTOMOBILES -->
   <section class="machines" id="automobiles">
-    <h2>AUTOMOBILES & CONCEPTS (M1 à M11, S1, Titan, etc.)</h2>
+    <h2>AUTOMOBILES & CONCEPTS</h2>
     <div class="cards" id="grid-automobiles"></div>
   </section>
 
-  <!-- SECTION MOTOS -->
   <section class="machines" id="motos">
-    <h2>MOTOS FUTURISTES (M0 & AM1)</h2>
+    <h2>MOTOS FUTURISTES</h2>
     <div class="cards" id="grid-motos"></div>
   </section>
 
-  <!-- SECTION ARCHIVES & DIVERS (Tous les autres fichiers du dépôt) -->
   <section class="machines" id="archives">
-    <h2>ARCHIVES, LABORATOIRE & FICHIERS DU DÉPÔT</h2>
+    <h2>ARCHIVES & LABORATOIRE</h2>
     <div class="cards" id="grid-archives"></div>
   </section>
 
-  <!-- MODALE D'AGRANDISSEMENT -->
+  <!-- MODALE -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <div class="modal-content" onclick="event.stopPropagation();">
       <button class="close-btn" onclick="closeModal()">&times;</button>
-      <h3 id="modalTitle" style="color:#d4af37; margin-bottom:15px;"></h3>
+      <h3 id="modalTitle" style="color:var(--gold-holo); margin-bottom:10px; font-size:0.9rem;"></h3>
       <img id="modalImg" src="" alt="Zoom">
     </div>
   </div>
 
   <footer>
-    © 2026 MNL INDUSTRIES — Créé et Imaginé par Manassé NTA MBWA. Tous droits réservés.
+    © 2026 MNL INDUSTRIES — Tous droits réservés.
   </footer>
 
   <script>
-    // TOUTES LES IMAGES EXACTES DE TON DÉPÔT GITHUB SONT ICI
+    // TOUTES LES IMAGES DU DÉPÔT INTÉGRÉES DANS LE FLUX
     const depotItems = [
-      // Aviation
       { id: 'a1', name: 'A1.jpg', file: 'A1.jpg', cat: 'aviation', desc: 'Aérodynamique' },
       { id: 'a2', name: 'A2.jpg', file: 'A2.jpg', cat: 'aviation', desc: 'Aérodynamique' },
       { id: 'a3', name: 'A3.jpg', file: 'A3.jpg', cat: 'aviation', desc: 'Aérodynamique' },
       { id: 'ac', name: 'Ac.jpg', file: 'Ac.jpg', cat: 'aviation', desc: 'Aviation Commerciale' },
       { id: 'vt1', name: 'Vt1.jpg', file: 'Vt1.jpg', cat: 'aviation', desc: 'VTOL' },
 
-      // Drones
       { id: 'd1', name: 'D1.jpg', file: 'D1.jpg', cat: 'drones', desc: 'Flotte Drone' },
       { id: 'd2', name: 'D2.jpg', file: 'D2.jpg', cat: 'drones', desc: 'Flotte Drone' },
       { id: 'd3', name: 'D3.jpg', file: 'D3.jpg', cat: 'drones', desc: 'Flotte Drone' },
@@ -339,7 +362,6 @@
       { id: 'd15', name: 'D15.jpg', file: 'D15.jpg', cat: 'drones', desc: 'Flotte Drone' },
       { id: 'dc', name: 'Dc.jpg', file: 'Dc.jpg', cat: 'drones', desc: 'Command Center' },
 
-      // Automobiles & Concepts
       { id: 'm1_file', name: 'M1.jpg', file: 'M1.jpg', cat: 'automobiles', desc: 'Automobile' },
       { id: 'm2_file', name: 'M2.jpg', file: 'M2.jpg', cat: 'automobiles', desc: 'Automobile' },
       { id: 'm3_file', name: 'M3.jpg', file: 'M3.jpg', cat: 'automobiles', desc: 'Automobile' },
@@ -354,11 +376,9 @@
       { id: 'mnls1', name: 'Mnl s1.jpg', file: 'Mnl s1.jpg', cat: 'automobiles', desc: 'Spider Sport' },
       { id: 'titan', name: 'Mnl titan.jpg', file: 'Mnl titan.jpg', cat: 'automobiles', desc: 'Léviathan' },
 
-      //  (M0 corrigé et AM1)
       { id: 'mnl_m0', name: 'MNL MOpng', file: 'MNL MOpng', cat: 'motos', desc: 'Moto Vectorielle' },
       { id: 'am1', name: 'Am1.jpg', file: 'Am1.jpg', cat: 'motos', desc: 'Moto Hypersport' },
 
-      // Archives, Lab & Divers
       { id: 'c1', name: 'C1.jpg', file: 'C1.jpg', cat: 'archives', desc: 'Laboratoire' },
       { id: 'e1', name: 'E1.jpg', file: 'E1.jpg', cat: 'archives', desc: 'Énergie' },
       { id: 'h1', name: 'H1.jpg', file: 'H1.jpg', cat: 'archives', desc: 'Unité Hydrogène' },
@@ -376,7 +396,6 @@
       { id: 'wa7765', name: 'IMG-20260821-WA7765.jpg', file: 'IMG-20260821-WA7765.jpg', cat: 'archives', desc: 'Archive WhatsApp' }
     ];
 
-    // INJECTION DE TOUTES LES CARTES DANS LEUR SECTION RESPECTIVE
     function renderDepot() {
       const containers = {
         aviation: document.getElementById('grid-aviation'),
@@ -396,21 +415,23 @@
         let cardHTML = `
           <div class="card">
             <img src="${item.file}" alt="${item.name}" onclick="openModal('${item.name}', '${item.file}')">
-            <div>
-              <h3>${item.name}</h3>
-              <p>${item.desc}</p>
-            </div>
-            <div class="interaction-box">
-              <div class="vote-buttons">
-                <button onclick="vote('${item.id}', 'like')">👍 (<span id="l-${item.id}">${likes}</span>)</button>
-                <button onclick="vote('${item.id}', 'dislike')">👎 (<span id="d-${item.id}">${dislikes}</span>)</button>
+            <div class="card-info">
+              <div>
+                <h3>${item.name}</h3>
+                <p>${item.desc}</p>
               </div>
-              <div class="comment-section">
-                <input type="text" id="c-name-${item.id}" placeholder="Votre nom">
-                <textarea id="c-text-${item.id}" placeholder="Votre avis..." rows="2"></textarea>
-                <button onclick="addComment('${item.id}')">PUBLIER AVIS</button>
-                <div class="comment-list" id="list-${item.id}">
-                  ${commentsHTML}
+              <div class="interaction-box">
+                <div class="vote-buttons">
+                  <button onclick="vote('${item.id}', 'like')">👍 (<span id="l-${item.id}">${likes}</span>)</button>
+                  <button onclick="vote('${item.id}', 'dislike')">👎 (<span id="d-${item.id}">${dislikes}</span>)</button>
+                </div>
+                <div class="comment-section">
+                  <input type="text" id="c-name-${item.id}" placeholder="Votre nom">
+                  <textarea id="c-text-${item.id}" placeholder="Votre avis..." rows="1"></textarea>
+                  <button onclick="addComment('${item.id}')">PUBLIER</button>
+                  <div class="comment-list" id="list-${item.id}">
+                    ${commentsHTML}
+                  </div>
                 </div>
               </div>
             </div>
@@ -423,33 +444,26 @@
       });
     }
 
-    // GESTION DES VOTES (LIKES / DISLIKES)
     function vote(id, type) {
       let votedKey = 'voted_' + id;
       if (localStorage.getItem(votedKey)) {
-        alert("Vous avez déjà voté pour ce fichier !");
+        alert("Déjà voté !");
         return;
       }
-
       let countElem = document.getElementById(type === 'like' ? 'l-' + id : 'd-' + id);
       let currentVal = parseInt(countElem.innerText) + 1;
       countElem.innerText = currentVal;
-
       localStorage.setItem(type === 'like' ? 'likes_' + id : 'dislikes_' + id, currentVal);
       localStorage.setItem(votedKey, 'true');
     }
 
-    // GESTION DES COMMENTAIRES
     function addComment(id) {
       let nameInput = document.getElementById('c-name-' + id);
       let textInput = document.getElementById('c-text-' + id);
       let name = nameInput.value.trim();
       let text = textInput.value.trim();
 
-      if (!name || !text) {
-        alert("Veuillez remplir votre nom et votre commentaire.");
-        return;
-      }
+      if (!name || !text) return;
 
       let commentsKey = 'comments_' + id;
       let comments = JSON.parse(localStorage.getItem(commentsKey) || '[]');
@@ -458,12 +472,10 @@
 
       let listElem = document.getElementById('list-' + id);
       listElem.innerHTML += `<div class="comment-item"><strong>${name}</strong>: ${text}</div>`;
-      
       nameInput.value = '';
       textInput.value = '';
     }
 
-    // MODALE POUR VOIR EN GRAND
     function openModal(title, file) {
       document.getElementById('modalTitle').innerText = title;
       document.getElementById('modalImg').src = file;
