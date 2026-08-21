@@ -745,3 +745,48 @@ console.log(`
 ║   Founder: Manassé Ntambwa           ║
 ╚══════════════════════════════════════╝
 `);
+// --- SYSTÈME DE VOTE INTERACTIF (LIKE / DISLIKE) ---
+function vote(modelId, type) {
+    // Récupérer les votes stockés ou initialiser
+    let votes = JSON.parse(localStorage.getItem('mnl_votes')) || {};
+    
+    if (!votes[modelId]) {
+        votes[modelId] = { likes: 0, dislikes: 0 };
+    }
+
+    if (type === 'like') {
+        votes[modelId].likes += 1;
+    } else if (type === 'dislike') {
+        votes[modelId].dislikes += 1;
+    }
+
+    // Sauvegarder dans le navigateur
+    localStorage.setItem('mnl_votes', JSON.stringify(votes));
+    
+    // Mettre à jour l'affichage instantanément
+    updateVoteDisplay(modelId, votes[modelId]);
+}
+
+function updateVoteDisplay(modelId, data) {
+    const card = document.querySelector(`.card[data-id="${modelId}"]`);
+    if (card) {
+        card.querySelector('.like-count').innerText = data.likes;
+        card.querySelector('.dislike-count').innerText = data.dislikes;
+    }
+}
+
+// Charger les votes au démarrage de la page
+window.addEventListener('DOMContentLoaded', () => {
+    let votes = JSON.parse(localStorage.getItem('mnl_votes')) || {};
+    for (let modelId in votes) {
+        updateVoteDisplay(modelId, votes[modelId]);
+    }
+});
+
+// --- PROTECTION DES CONCEPTS (Sécurité) ---
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('dragstart', e => {
+    if (e.target.nodeName === 'IMG') e.preventDefault();
+});
+
+console.log("MNL Core Engine v2.0 - Prêt.");
