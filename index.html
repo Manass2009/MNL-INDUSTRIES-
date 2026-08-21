@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MNL INDUSTRIES — Créé par Manassé NTA MBWA</title>
-  <link rel="stylesheet" href="style.css">
+  <title>MNL INDUSTRIES — L'impossible devient ingénierie</title>
   <style>
-    /* DESIGN STRICT NOIR ET OR (Respect de l'effet liquide d'origine, zéro rouge, zéro blanc) */
+    /* DESIGN STRICT NOIR & OR (Zéro rouge, zéro blanc) */
     body {
       background-color: #000000;
       color: #d4af37;
@@ -21,6 +20,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     .logo {
       font-size: 24px;
@@ -36,12 +38,18 @@
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 15px;
+      flex-wrap: wrap;
     }
     .nav-links a {
       color: #d4af37;
       text-decoration: none;
       font-weight: bold;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+    .nav-links a:hover {
+      text-shadow: 0 0 8px #d4af37;
     }
     .hero {
       text-align: center;
@@ -82,6 +90,8 @@
       color: #d4af37;
       margin-bottom: 40px;
       font-size: 2rem;
+      border-bottom: 1px solid #d4af37;
+      padding-bottom: 10px;
     }
     .cards {
       display: grid;
@@ -93,7 +103,9 @@
       border: 1px solid #d4af37;
       padding: 20px;
       text-align: center;
-      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
@@ -106,47 +118,83 @@
       object-fit: cover;
       border: 1px solid #d4af37;
       margin-bottom: 15px;
+      cursor: pointer;
     }
     .card h3 {
       color: #d4af37;
-      margin-bottom: 5px;
+      margin: 5px 0;
+      font-size: 1rem;
+      word-break: break-all;
     }
     .card p {
       color: #d4af37;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-bottom: 10px;
-    }
-    .status {
-      display: inline-block;
-      background: #000000;
-      color: #d4af37;
-      border: 1px solid #d4af37;
-      padding: 3px 10px;
-      font-size: 0.8rem;
-      margin-bottom: 15px;
+      opacity: 0.8;
     }
     
-    /* BOUTON DE LIKE UNIQUE (Noir & Or) */
-    .vote-box {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 10px;
+    /* INTERACTION LIKES / DISLIKES & COMMENTAIRES */
+    .interaction-box {
+      margin-top: 15px;
+      border-top: 1px dashed #d4af37;
+      padding-top: 10px;
+      text-align: left;
     }
-    .vote-box button {
+    .vote-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10px;
+    }
+    .vote-buttons button {
       background: #000000;
       color: #d4af37;
       border: 1px solid #d4af37;
-      padding: 6px 15px;
+      padding: 5px 10px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 0.8rem;
     }
-    .vote-box button:hover {
+    .vote-buttons button:hover {
       background: #d4af37;
       color: #000000;
     }
+    .comment-section input, .comment-section textarea {
+      width: 100%;
+      background: #000000;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 6px;
+      margin-bottom: 5px;
+      box-sizing: border-box;
+      font-size: 0.8rem;
+    }
+    .comment-section button {
+      background: #d4af37;
+      color: #000000;
+      border: none;
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      font-size: 0.8rem;
+    }
+    .comment-list {
+      max-height: 100px;
+      overflow-y: auto;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      text-align: left;
+      border-top: 1px solid #222;
+      padding-top: 5px;
+    }
+    .comment-item {
+      margin-bottom: 4px;
+      border-bottom: 1px dotted #333;
+      padding-bottom: 2px;
+      word-break: break-all;
+    }
 
-    /* FENÊTRE MODALE (IMAGE EN GRAND) */
+    /* MODALE IMAGE EN GRAND */
     .modal {
       display: none;
       position: fixed;
@@ -163,7 +211,7 @@
       background: #000000;
       border: 2px solid #d4af37;
       padding: 20px;
-      max-width: 850px;
+      max-width: 900px;
       width: 90%;
       text-align: center;
       position: relative;
@@ -184,6 +232,7 @@
       background: none;
       border: none;
     }
+
     footer {
       border-top: 1px solid #d4af37;
       text-align: center;
@@ -196,141 +245,65 @@
 </head>
 <body>
 
+  <!-- BARRE DE NAVIGATION -->
   <nav class="navbar">
     <div class="logo"><span class="m-logo">M</span><span>MNL</span></div>
     <ul class="nav-links">
-      <li><a href="index.html">ACCUEIL</a></li>
-      <li><a href="#automobiles">AUTOMOBILE</a></li>
-      <li><a href="#motos">MOTOS</a></li>
+      <li><a href="#accueil">ACCUEIL</a></li>
       <li><a href="#aviation">AVIATION</a></li>
       <li><a href="#drones">DRONES</a></li>
+      <li><a href="#automobiles">AUTOMOBILES</a></li>
+      <li><a href="#motos">MOTOS</a></li>
+      <li><a href="#archives">ARCHIVES & DIVERS</a></li>
     </ul>
   </nav>
 
-  <section class="hero">
+  <!-- SECTION ACCUEIL -->
+  <section class="hero" id="accueil">
     <div class="hero-content">
       <h1>MNL</h1>
       <p class="signature">L'IMPOSSIBLE DEVIENT INGÉNIERIE</p>
       <div class="creator-tag">Fondé et imaginé par <strong>Manassé NTA MBWA</strong></div>
-      <p class="subtitle">Cliquez sur n'importe quelle image pour l'afficher en grand format.</p>
+      <p class="subtitle">Intégralité des fichiers du dépôt GitHub affichée en direct. Donnez votre avis et commentez chaque création.</p>
     </div>
   </section>
 
-  <!-- AUTOMOBILES -->
-  <section class="machines" id="automobiles">
-    <h2>AUTOMOBILES & CONCEPTS</h2>
-    <div class="cards">
-      <div class="card" onclick="openModal('MNL M1', 'MNL M1.png')">
-        <img src="MNL M1.png" alt="M1"><h3>M1</h3><p>URBAN MOBILITY</p><span class="status">CONCEPT</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('m1')">👍 <span id="l-m1">0</span></button>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('MNL M2', 'MNL M2 .jpg')">
-        <img src="MNL  M2 .jpg" alt="M2"><h3>M2</h3><p>PERFORMANCE</p><span class="status">PROTOTYPE</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('m2')">👍 <span id="l-m2">0</span></button>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('MNL M3', 'MNL M3.png')">
-        <img src="MNL M3.png" alt="M3"><h3>M3</h3><p>VISION</p><span class="status">VISION</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('m3')">👍 <span id="l-m3">0</span></button>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('MNL M4', 'M4.jpg')">
-        <img src="M4.jpg" alt="M4"><h3>M4</h3><p>GT HYBRIDE</p><span class="status">CONCEPT</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('m4')">👍 <span id="l-m4">0</span></button>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('MNL M5', 'M5.jpg')">
-        <img src="M5.jpg" alt="M5"><h3>M5</h3><p>HYPERCAR</p><span class="status">PROTOTYPE</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('m5')">👍 <span id="l-m5">0</span></button>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('MNL M6', 'MNL M6.png')">
-        <img src="MNL M6.png" alt="M6"><h3>M6</h3><p>BERLINE TECH</p><span class="status">LAB</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('m6')">👍 <span id="l-m6">0</span></button>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('MNL M11', 'M11.jpg')">
-        <img src="M11.jpg" alt="M11"><h3>M11</h3><p>ULTIMATE COUPE</p><span class="status">CONCEPT</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('m11')">👍 <span id="l-m11">0</span></button>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('MNL S1', 'Mnl s1.jpg')">
-        <img src="Mnl s1.jpg" alt="Mnl s1"><h3>MNL S1</h3><p>SPIDER SPORT</p><span class="status">PROTOTYPE</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('mnls1')">👍 <span id="l-mnls1">0</span></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MOTOS (M0 CORRIGÉ) -->
-  <section class="machines" id="motos">
-    <h2>MOTOS FUTURISTES</h2>
-    <div class="cards">
-      <div class="card" onclick="openModal('MNL M0', 'MNL MOpng')">
-        <img src="MNL MOpng" alt="MNL M0"><h3>MNL M0</h3><p>MOTO VECTORIELLE</p><span class="status">MOTO</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('m0')">👍 <span id="l-m0">0</span></button>
-        </div>
-      </div>
-      <div class="card" onclick="openModal('MNL AM1', 'Am1.jpg')">
-        <img src="Am1.jpg" alt="Am1"><h3>AM1</h3><p>MOTO HYPERSPORT</p><span class="status">MOTO</span>
-        <div class="vote-box" onclick="event.stopPropagation();">
-          <button onclick="likeModel('am1')">👍 <span id="l-am1">0</span></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AVIATION -->
+  <!-- SECTION AVIATION -->
   <section class="machines" id="aviation">
-    <h2>AVIATION & SPATIAL</h2>
-    <div class="cards">
-      <div class="card" onclick="openModal('MNL A1', 'A1.jpg')"><img src="A1.jpg" alt="A1"><h3>A1 AERO</h3><p>PROPULSION PHOTONIQUE</p><span class="status">AVION</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('a1')">👍 <span id="l-a1">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL A2', 'A2.jpg')"><img src="A2.jpg" alt="A2"><h3>A2 AERO</h3><p>JET SUPERSONIQUE</p><span class="status">AVION</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('a2')">👍 <span id="l-a2">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL A3', 'A3.jpg')"><img src="A3.jpg" alt="A3"><h3>A3 AERO</h3><p>TRANSPORT ORBITAL</p><span class="status">AVION</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('a3')">👍 <span id="l-a3">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL AC-01', 'Ac.jpg')"><img src="Ac.jpg" alt="Ac"><h3>AC-01</h3><p>AVIATION COMMERCIALE</p><span class="status">AVION</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('ac')">👍 <span id="l-ac">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL VT1', 'Vt1.jpg')"><img src="Vt1.jpg" alt="Vt1"><h3>VT1</h3><p>VTOL URBAIN</p><span class="status">AVIATION</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('vt1')">👍 <span id="l-vt1">0</span></button></div></div>
-    </div>
+    <h2>AVIATION & SPATIAL (A1, A2, A3, Ac, Vt1)</h2>
+    <div class="cards" id="grid-aviation"></div>
   </section>
 
-  <!-- DRONES (D1 à D15 + DC) -->
+  <!-- SECTION DRONES -->
   <section class="machines" id="drones">
-    <h2>FLOTTE DE DRONES (D1 - D15)</h2>
-    <div class="cards">
-      <div class="card" onclick="openModal('MNL D1', 'D1.jpg')"><img src="D1.jpg" alt="D1"><h3>MNL D1</h3><p>DRONE TACTIQUE</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d1')">👍 <span id="l-d1">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D2', 'D2.jpg')"><img src="D2.jpg" alt="D2"><h3>MNL D2</h3><p>DRONE RECON</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d2')">👍 <span id="l-d2">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D3', 'D3.jpg')"><img src="D3.jpg" alt="D3"><h3>MNL D3</h3><p>DRONE INTERCEPTEUR</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d3')">👍 <span id="l-d3">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D4', 'D4.jpg')"><img src="D4.jpg" alt="D4"><h3>MNL D4</h3><p>DRONE CARGO</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d4')">👍 <span id="l-d4">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D5', 'D5.jpg')"><img src="D5.jpg" alt="D5"><h3>MNL D5</h3><p>DRONE AUTONOME</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d5')">👍 <span id="l-d5">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D6', 'D6.jpg')"><img src="D6.jpg" alt="D6"><h3>MNL D6</h3><p>DRONE LOURD</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d6')">👍 <span id="l-d6">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D7', 'D7.jpg')"><img src="D7.jpg" alt="D7"><h3>MNL D7</h3><p>DRONE DISCRET</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d7')">👍 <span id="l-d7">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D8', 'D8.jpg')"><img src="D8.jpg" alt="D8"><h3>MNL D8</h3><p>DRONE DE POINTE</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d8')">👍 <span id="l-d8">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D9', 'D9.jpg')"><img src="D9.jpg" alt="D9"><h3>MNL D9</h3><p>DRONE STRATÉGIQUE</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d9')">👍 <span id="l-d9">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D10', 'D10.jpg')"><img src="D10.jpg" alt="D10"><h3>MNL D10</h3><p>DRONE RAPIDE</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d10')">👍 <span id="l-d10">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D11', 'D11.jpg')"><img src="D11.jpg" alt="D11"><h3>MNL D11</h3><p>SURVEILLANCE</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d11')">👍 <span id="l-d11">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D12', 'D12.jpg')"><img src="D12.jpg" alt="D12"><h3>MNL D12</h3><p>EXPLORATEUR</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d12')">👍 <span id="l-d12">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D13', 'D13.jpg')"><img src="D13.jpg" alt="D13"><h3>MNL D13</h3><p>QUANTIQUE</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d13')">👍 <span id="l-d13">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D14', 'D14.jpg')"><img src="D14.jpg" alt="D14"><h3>MNL D14</h3><p>COMBAT</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d14')">👍 <span id="l-d14">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL D15', 'D15.jpg')"><img src="D15.jpg" alt="D15"><h3>MNL D15</h3><p>ULTIMATE</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="likeModel('d15')">👍 <span id="l-d15">0</span></button></div></div>
-      <div class="card" onclick="openModal('MNL DC', 'Dc.jpg')"><img src="Dc.jpg" alt="Dc"><h3>MNL DC</h3><p>COMMAND</p><span class="status">DRONE</span><div class="vote-box" onclick="event.stopPropagation();"><button onclick="vote('dc')">👍 <span id="l-dc">0</span></button></div></div>
-    </div>
+    <h2>FLOTTE DE DRONES (D1 à D15 + DC)</h2>
+    <div class="cards" id="grid-drones"></div>
   </section>
 
-  <!-- FENÊTRE MODALE POUR AFFICHER L'IMAGE EN GRAND -->
+  <!-- SECTION AUTOMOBILES -->
+  <section class="machines" id="automobiles">
+    <h2>AUTOMOBILES & CONCEPTS (M1 à M11, S1, Titan, etc.)</h2>
+    <div class="cards" id="grid-automobiles"></div>
+  </section>
+
+  <!-- SECTION MOTOS -->
+  <section class="machines" id="motos">
+    <h2>MOTOS FUTURISTES (M0 & AM1)</h2>
+    <div class="cards" id="grid-motos"></div>
+  </section>
+
+  <!-- SECTION ARCHIVES & DIVERS (Tous les autres fichiers du dépôt) -->
+  <section class="machines" id="archives">
+    <h2>ARCHIVES, LABORATOIRE & FICHIERS DU DÉPÔT</h2>
+    <div class="cards" id="grid-archives"></div>
+  </section>
+
+  <!-- MODALE D'AGRANDISSEMENT -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <div class="modal-content" onclick="event.stopPropagation();">
       <button class="close-btn" onclick="closeModal()">&times;</button>
-      <h2 id="modalTitle" style="color:#d4af37; margin-bottom:15px;"></h2>
-      <img id="modalImg" src="" alt="Agrandissement">
+      <h3 id="modalTitle" style="color:#d4af37; margin-bottom:15px;"></h3>
+      <img id="modalImg" src="" alt="Zoom">
     </div>
   </div>
 
@@ -339,31 +312,169 @@
   </footer>
 
   <script>
-    // Gestion de la modale pour voir l'image en grand
-    function openModal(title, imgSrc) {
+    // TOUTES LES IMAGES EXACTES DE TON DÉPÔT GITHUB SONT ICI
+    const depotItems = [
+      // Aviation
+      { id: 'a1', name: 'A1.jpg', file: 'A1.jpg', cat: 'aviation', desc: 'Aérodynamique' },
+      { id: 'a2', name: 'A2.jpg', file: 'A2.jpg', cat: 'aviation', desc: 'Aérodynamique' },
+      { id: 'a3', name: 'A3.jpg', file: 'A3.jpg', cat: 'aviation', desc: 'Aérodynamique' },
+      { id: 'ac', name: 'Ac.jpg', file: 'Ac.jpg', cat: 'aviation', desc: 'Aviation Commerciale' },
+      { id: 'vt1', name: 'Vt1.jpg', file: 'Vt1.jpg', cat: 'aviation', desc: 'VTOL' },
+
+      // Drones
+      { id: 'd1', name: 'D1.jpg', file: 'D1.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd2', name: 'D2.jpg', file: 'D2.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd3', name: 'D3.jpg', file: 'D3.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd4', name: 'D4.jpg', file: 'D4.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd5', name: 'D5.jpg', file: 'D5.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd6', name: 'D6.jpg', file: 'D6.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd7', name: 'D7.jpg', file: 'D7.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd8', name: 'D8.jpg', file: 'D8.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd9', name: 'D9.jpg', file: 'D9.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd10', name: 'D10.jpg', file: 'D10.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd11', name: 'D11.jpg', file: 'D11.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd12', name: 'D12.jpg', file: 'D12.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd13', name: 'D13.jpg', file: 'D13.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd14', name: 'D14.jpg', file: 'D14.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'd15', name: 'D15.jpg', file: 'D15.jpg', cat: 'drones', desc: 'Flotte Drone' },
+      { id: 'dc', name: 'Dc.jpg', file: 'Dc.jpg', cat: 'drones', desc: 'Command Center' },
+
+      // Automobiles & Concepts
+      { id: 'm1_file', name: 'M1.jpg', file: 'M1.jpg', cat: 'automobiles', desc: 'Automobile' },
+      { id: 'm2_file', name: 'M2.jpg', file: 'M2.jpg', cat: 'automobiles', desc: 'Automobile' },
+      { id: 'm3_file', name: 'M3.jpg', file: 'M3.jpg', cat: 'automobiles', desc: 'Automobile' },
+      { id: 'm4_file', name: 'M4.jpg', file: 'M4.jpg', cat: 'automobiles', desc: 'Automobile' },
+      { id: 'm5_file', name: 'M5.jpg', file: 'M5.jpg', cat: 'automobiles', desc: 'Automobile' },
+      { id: 'm6_file', name: 'M6.jpg', file: 'M6.jpg', cat: 'automobiles', desc: 'Automobile' },
+      { id: 'm11_file', name: 'M11.jpg', file: 'M11.jpg', cat: 'automobiles', desc: 'Automobile' },
+      { id: 'mnl_m1', name: 'MNL M1.png', file: 'MNL M1.png', cat: 'automobiles', desc: 'Concept PNG' },
+      { id: 'mnl_m2', name: 'MNL M2 .jpg', file: 'MNL M2 .jpg', cat: 'automobiles', desc: 'Prototype' },
+      { id: 'mnl_m3', name: 'MNL M3.png', file: 'MNL M3.png', cat: 'automobiles', desc: 'Vision PNG' },
+      { id: 'mnl_m6', name: 'MNL M6.png', file: 'MNL M6.png', cat: 'automobiles', desc: 'Berline Lab PNG' },
+      { id: 'mnls1', name: 'Mnl s1.jpg', file: 'Mnl s1.jpg', cat: 'automobiles', desc: 'Spider Sport' },
+      { id: 'titan', name: 'Mnl titan.jpg', file: 'Mnl titan.jpg', cat: 'automobiles', desc: 'Léviathan' },
+
+      //  (M0 corrigé et AM1)
+      { id: 'mnl_m0', name: 'MNL MOpng', file: 'MNL MOpng', cat: 'motos', desc: 'Moto Vectorielle' },
+      { id: 'am1', name: 'Am1.jpg', file: 'Am1.jpg', cat: 'motos', desc: 'Moto Hypersport' },
+
+      // Archives, Lab & Divers
+      { id: 'c1', name: 'C1.jpg', file: 'C1.jpg', cat: 'archives', desc: 'Laboratoire' },
+      { id: 'e1', name: 'E1.jpg', file: 'E1.jpg', cat: 'archives', desc: 'Énergie' },
+      { id: 'h1', name: 'H1.jpg', file: 'H1.jpg', cat: 'archives', desc: 'Unité Hydrogène' },
+      { id: 'o7', name: 'O7.jpg', file: 'O7.jpg', cat: 'archives', desc: 'Projet O7' },
+      { id: 'r1', name: 'R1.jpg', file: 'R1.jpg', cat: 'archives', desc: 'Robotique' },
+      { id: 'x1', name: 'X1.jpg', file: 'X1.jpg', cat: 'archives', desc: 'Expérimental' },
+      { id: 'x2', name: 'X2.jpg', file: 'X2.jpg', cat: 'archives', desc: 'Expérimental 2' },
+      { id: 'pm', name: 'MNL PM.png', file: 'MNL PM.png', cat: 'archives', desc: 'Power Matrix' },
+      { id: 'produit', name: 'MNL PRODUIT.png', file: 'MNL PRODUIT.png', cat: 'archives', desc: 'Produit Phare' },
+      { id: 'wa1446', name: 'IMG-20260820-WA1446.jpg', file: 'IMG-20260820-WA1446.jpg', cat: 'archives', desc: 'Archive WhatsApp' },
+      { id: 'wa3301', name: 'IMG-20260820-WA3301.jpg', file: 'IMG-20260820-WA3301.jpg', cat: 'archives', desc: 'Archive WhatsApp' },
+      { id: 'wa8706', name: 'IMG-20260820-WA8706.jpg', file: 'IMG-20260820-WA8706.jpg', cat: 'archives', desc: 'Archive WhatsApp' },
+      { id: 'wa1460', name: 'IMG-20260821-WA1460.jpg', file: 'IMG-20260821-WA1460.jpg', cat: 'archives', desc: 'Archive WhatsApp' },
+      { id: 'wa2833', name: 'IMG-20260821-WA2833.jpg', file: 'IMG-20260821-WA2833.jpg', cat: 'archives', desc: 'Archive WhatsApp' },
+      { id: 'wa7765', name: 'IMG-20260821-WA7765.jpg', file: 'IMG-20260821-WA7765.jpg', cat: 'archives', desc: 'Archive WhatsApp' }
+    ];
+
+    // INJECTION DE TOUTES LES CARTES DANS LEUR SECTION RESPECTIVE
+    function renderDepot() {
+      const containers = {
+        aviation: document.getElementById('grid-aviation'),
+        drones: document.getElementById('grid-drones'),
+        automobiles: document.getElementById('grid-automobiles'),
+        motos: document.getElementById('grid-motos'),
+        archives: document.getElementById('grid-archives')
+      };
+
+      depotItems.forEach(item => {
+        let likes = localStorage.getItem('likes_' + item.id) || 0;
+        let dislikes = localStorage.getItem('dislikes_' + item.id) || 0;
+        let comments = JSON.parse(localStorage.getItem('comments_' + item.id) || '[]');
+
+        let commentsHTML = comments.map(c => `<div class="comment-item"><strong>${c.name}</strong>: ${c.text}</div>`).join('');
+
+        let cardHTML = `
+          <div class="card">
+            <img src="${item.file}" alt="${item.name}" onclick="openModal('${item.name}', '${item.file}')">
+            <div>
+              <h3>${item.name}</h3>
+              <p>${item.desc}</p>
+            </div>
+            <div class="interaction-box">
+              <div class="vote-buttons">
+                <button onclick="vote('${item.id}', 'like')">👍 (<span id="l-${item.id}">${likes}</span>)</button>
+                <button onclick="vote('${item.id}', 'dislike')">👎 (<span id="d-${item.id}">${dislikes}</span>)</button>
+              </div>
+              <div class="comment-section">
+                <input type="text" id="c-name-${item.id}" placeholder="Votre nom">
+                <textarea id="c-text-${item.id}" placeholder="Votre avis..." rows="2"></textarea>
+                <button onclick="addComment('${item.id}')">PUBLIER AVIS</button>
+                <div class="comment-list" id="list-${item.id}">
+                  ${commentsHTML}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        if (containers[item.cat]) {
+          containers[item.cat].innerHTML += cardHTML;
+        }
+      });
+    }
+
+    // GESTION DES VOTES (LIKES / DISLIKES)
+    function vote(id, type) {
+      let votedKey = 'voted_' + id;
+      if (localStorage.getItem(votedKey)) {
+        alert("Vous avez déjà voté pour ce fichier !");
+        return;
+      }
+
+      let countElem = document.getElementById(type === 'like' ? 'l-' + id : 'd-' + id);
+      let currentVal = parseInt(countElem.innerText) + 1;
+      countElem.innerText = currentVal;
+
+      localStorage.setItem(type === 'like' ? 'likes_' + id : 'dislikes_' + id, currentVal);
+      localStorage.setItem(votedKey, 'true');
+    }
+
+    // GESTION DES COMMENTAIRES
+    function addComment(id) {
+      let nameInput = document.getElementById('c-name-' + id);
+      let textInput = document.getElementById('c-text-' + id);
+      let name = nameInput.value.trim();
+      let text = textInput.value.trim();
+
+      if (!name || !text) {
+        alert("Veuillez remplir votre nom et votre commentaire.");
+        return;
+      }
+
+      let commentsKey = 'comments_' + id;
+      let comments = JSON.parse(localStorage.getItem(commentsKey) || '[]');
+      comments.push({ name: name, text: text });
+      localStorage.setItem(commentsKey, JSON.stringify(comments));
+
+      let listElem = document.getElementById('list-' + id);
+      listElem.innerHTML += `<div class="comment-item"><strong>${name}</strong>: ${text}</div>`;
+      
+      nameInput.value = '';
+      textInput.value = '';
+    }
+
+    // MODALE POUR VOIR EN GRAND
+    function openModal(title, file) {
       document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalImg').src = file;
       document.getElementById('imageModal').style.display = 'flex';
     }
+
     function closeModal() {
       document.getElementById('imageModal').style.display = 'none';
     }
 
-    // Système de like unique (bloque un deuxième vote sur le même appareil)
-    function likeModel(id) {
-      let likedKey = 'mnl_liked_' + id;
-      if (localStorage.getItem(likedKey)) {
-        alert("Vous avez déjà aimé ce modèle !");
-        return;
-      }
-      
-      let span = document.getElementById('l-' + id);
-      if (span) {
-        let count = parseInt(span.innerText) + 1;
-        span.innerText = count;
-        localStorage.setItem(likedKey, 'true');
-      }
-    }
+    window.onload = renderDepot;
   </script>
 </body>
 </html>
